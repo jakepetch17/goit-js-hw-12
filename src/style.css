@@ -1,0 +1,177 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+.search-form input {
+  width: 272px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  font-size: 16px;
+  color: #2e2f42;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-form input:hover {
+  border-color: #000000;
+}
+
+.search-form input:focus {
+  border-color: #4e75ff;
+  outline: none;
+}
+
+.search-form button {
+  width: 91px;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  background-color: #4e75ff;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #6c8cff;
+}
+
+.search-form input:-webkit-autofill,
+.search-form input:-webkit-autofill:hover,
+.search-form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #2e2f42;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset; /* Arka planı beyazla maskeler */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+  list-style: none;
+  padding: 24px;
+  margin: 0;
+}
+
+.gallery-item {
+  border: 1px solid #808080;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 4px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  margin: 0;
+}
+
+.info-item b {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.loader-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.loader-text {
+  font-size: 16px;
+  color: #2e2f42;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #4e75ff; /* Butonun mavisiyle uyumlu */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-more {
+  display: block;
+  margin: 32px auto;
+  padding: 8px 16px;
+  border: none;
+  background-color: #4e75ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 8px;
+  width: 125px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.load-more:hover {
+  background-color: #6c8cff;
+}
+
+/* iziToast metnini ve ikonunu Figma'daki gibi hizalamak için */
+.iziToast-texts {
+  margin-left: 0 !important; /* İkon alanı boşluğunu sıfırlar */
+}
+
+.iziToast-message {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+
+/* Figma'daki gibi daha keskin köşeler istiyorsan */
+.iziToast {
+  border-radius: 4px !important;
+}
+
+/* iziToast Kapatma (X) butonunu beyaz yapar */
+.iziToast > .iziToast-close {
+  background-color: transparent !important;
+  color: #ffffff !important; /* İkon rengi beyaz */
+  opacity: 1 !important; /* Görünürlüğü artırır */
+  filter: brightness(0) invert(1); /* Eğer ikon görsel ise tamamen beyaza çevirir */
+}
+
+/* Hata mesajı yanındaki ana ikonun (varsa) rengini beyaz yapar */
+.iziToast-icon {
+  color: #ffffff !important;
+}
