@@ -87,29 +87,28 @@ form.addEventListener("submit", async (event) => {
     gallery.insertAdjacentHTML("beforeend", markup);
     lightbox.refresh();
 
-    if (
-      responseData.totalHits > 0 &&
-      responseData.totalHits <= currentPage * PER_PAGE
-    ) {
+    if (responseData.hits.length < PER_PAGE) {
       loadMoreBtn.style.display = "none";
-      iziToast.error({
-        message: "We're sorry, but you've reached the end of search results.",
-        position: "bottomRight",
-        backgroundColor: "#ef4040",
-        messageColor: "#fafafb",
-        messageSize: "16px",
-        iconUrl: warningIcon,
-        maxWidth: 432,
-        progressBarColor: "#b51b1b",
-        displayMode: 2,
-        close: true,
-        closeOnEscape: true,
-        closeOnClick: true,
-        onOpening: function (instance, toast) {
-          toast.style.borderBottom = "2px solid #ffbebe";
-        },
-      });
-    } else if (responseData.totalHits > PER_PAGE) {
+      if (responseData.totalHits > 0) {
+        iziToast.error({
+          message: "We're sorry, but you've reached the end of search results.",
+          position: "bottomRight",
+          backgroundColor: "#ef4040",
+          messageColor: "#fafafb",
+          messageSize: "16px",
+          iconUrl: warningIcon,
+          maxWidth: 432,
+          progressBarColor: "#b51b1b",
+          displayMode: 2,
+          close: true,
+          closeOnEscape: true,
+          closeOnClick: true,
+          onOpening: function (instance, toast) {
+            toast.style.borderBottom = "2px solid #ffbebe";
+          },
+        });
+      }
+    } else {
       loadMoreBtn.style.display = "block";
     }
   } catch (error) {
@@ -195,24 +194,42 @@ loadMoreBtn.addEventListener("click", async () => {
 
     if (error.response && error.response.status === 400) {
       loadMoreBtn.style.display = "none";
+      iziToast.error({
+        message: "We're sorry, but you've reached the end of search results.",
+        position: "bottomRight",
+        backgroundColor: "#ef4040",
+        messageColor: "#fafafb",
+        messageSize: "16px",
+        iconUrl: warningIcon,
+        maxWidth: 432,
+        progressBarColor: "#b51b1b",
+        displayMode: 2,
+        close: true,
+        closeOnEscape: true,
+        closeOnClick: true,
+        onOpening: function (instance, toast) {
+          toast.style.borderBottom = "2px solid #ffbebe";
+        },
+      });
+    } else {
+      iziToast.error({
+        message: `An error occurred, please try again later!`,
+        position: "topRight",
+        backgroundColor: "#ef4040",
+        messageColor: "#fafafb",
+        messageSize: "16px",
+        iconUrl: warningIcon,
+        maxWidth: 432,
+        progressBarColor: "#b51b1b",
+        displayMode: 2,
+        close: true,
+        closeOnEscape: true,
+        closeOnClick: true,
+        onOpening: function (instance, toast) {
+          toast.style.borderBottom = "2px solid #ffbebe";
+        },
+      });
     }
-    iziToast.error({
-      message: `An error occurred, please try again later!`,
-      position: "topRight",
-      backgroundColor: "#ef4040",
-      messageColor: "#fafafb",
-      messageSize: "16px",
-      iconUrl: warningIcon,
-      maxWidth: 432,
-      progressBarColor: "#b51b1b",
-      displayMode: 2,
-      close: true,
-      closeOnEscape: true,
-      closeOnClick: true,
-      onOpening: function (instance, toast) {
-        toast.style.borderBottom = "2px solid #ffbebe";
-      },
-    });
   } finally {
     loader.style.display = "none";
   }
@@ -239,7 +256,7 @@ function createMarkup(images) {
   return images
     .map((image) => {
       return `<li class="gallery-item">
-              <a class="gallery-link" href=${image.largeImageURL}>
+              <a class="gallery-link" href="${image.largeImageURL}">
                 <img
                   class="gallery-image"
                   src="${image.webformatURL}"
